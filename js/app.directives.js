@@ -64,8 +64,9 @@
 							var id = attrs.id,
 								data = ( (value < opts.min) ? 0 : value) / 100,
 								//SVG canvas - default is half the size of parent's width
-								width = opts.width ? opts.width : $("#" + id).parent().width() / 2,
-								height = opts.height ? opts.height : width,
+								width = angular.element ( element[0] ).parent()[0].offsetWidth,
+								height = angular.element ( element[0] ).parent()[0].offsetWidth,
+								radius = Math.min(width, height) / 2,
 								min = opts.min,
 								max = opts.max,
 								//data normalizer - Tau: http://tauday.com/tau-manifesto
@@ -79,17 +80,19 @@
 
 								//draw circle
 								arc = d3.svg.arc()
-									.innerRadius((height + width) / 7 + 10)//50
-									.outerRadius((height + width) / 5 + 10)//65
+									// .innerRadius((height + width) / 7 + 10)//50
+									// .outerRadius((height + width) / 5 + 10)//65
+									.innerRadius ( radius / 1.5 )
+									.outerRadius ( radius )
 									.startAngle(0),
 
 								//create svg
 								svg = d3.select("#" + id).append("svg")
-									.attr("width", "100%")
-									.attr("height", "35%")
-									.attr("viewBox", "0 0 200 165")
+									.attr("width", width)
+									.attr("height", height)
+									// .attr("viewBox", "0 0 200 165")
 									.append("g")
-									.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")"),
+									.attr("transform", "translate(" + radius + "," + radius + ")"),
 
 								//background color of circle
 								background = svg.append("path")
