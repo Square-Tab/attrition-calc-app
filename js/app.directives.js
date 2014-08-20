@@ -64,8 +64,8 @@
 							var id = attrs.id,
 								data = ( (value < opts.min) ? 0 : value) / 100,
 								//SVG canvas - default is half the size of parent's width
-								width = opts.width ? opts.width : $("#" + id).parent().width() / 2,
-								height = opts.height ? opts.height : width,
+								// width = angular.element ( element[0] ).parent()[0].offsetWidth,
+								// height = angular.element ( element[0] ).parent()[0].offsetWidth,
 								min = opts.min,
 								max = opts.max,
 								//data normalizer - Tau: http://tauday.com/tau-manifesto
@@ -75,21 +75,29 @@
 									r = percent < 50 ? 255 : Math.floor(255 - (percent * 2 - 100) * 255 / 100);
 									g = percent > 50 ? 255 : Math.floor((percent * 2) * 255 / 100);
 									return 'rgb(' + r + ',' + g + ',0)';
-								},
+								};
 
-								//draw circle
-								arc = d3.svg.arc()
-									.innerRadius((height + width) / 7 + 10)//50
-									.outerRadius((height + width) / 5 + 10)//65
+							var width 	= width > 0 ? width : $('#' + attrs.id).parent().parent().width() / 2;
+							var height 	= height > 0 ? height : $('#' + attrs.id).parent().parent().height() / 2;
+							height 		= height > 0 ? height : width;
+
+							var radius = Math.min(width, height) / 2;
+
+							//draw circle
+							var	arc = d3.svg.arc()
+									// .innerRadius((height + width) / 7 + 10)//50
+									// .outerRadius((height + width) / 5 + 10)//65
+									.innerRadius ( radius  * 0.7 )
+									.outerRadius ( radius * 0.9 )
 									.startAngle(0),
 
 								//create svg
 								svg = d3.select("#" + id).append("svg")
-									.attr("width", "100%")
-									.attr("height", "35%")
-									.attr("viewBox", "0 0 200 165")
+									.attr("width", width)
+									.attr("height", height)
+									// .attr("viewBox", "0 0 200 165")
 									.append("g")
-									.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")"),
+									.attr("transform", "translate(" + radius + "," + radius + ")"),
 
 								//background color of circle
 								background = svg.append("path")
