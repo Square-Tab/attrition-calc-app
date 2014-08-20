@@ -79,11 +79,11 @@
 
 							var width 	= width > 0 ? width : $('#' + attrs.id).parent().parent().width() / 2;
 							var height 	= height > 0 ? height : $('#' + attrs.id).parent().parent().height() / 2;
-							height 	= height > 0 ? height : width;
+							height 		= height > 0 ? height : width;
 
 							var radius = Math.min(width, height) / 2;
 
-								//draw circle
+							//draw circle
 							var	arc = d3.svg.arc()
 									// .innerRadius((height + width) / 7 + 10)//50
 									// .outerRadius((height + width) / 5 + 10)//65
