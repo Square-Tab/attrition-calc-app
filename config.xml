@@ -18,7 +18,17 @@
     <gap:platform name="ios" />
 
     <!-- Splashscreen -->
-    <gap:splash src="img/splash-screen.png" />
+        <!-- iOS -->
+            <gap:splash gap:platform="ios" src="img/ios/Default.png" width="320" height="480" />
+            <gap:splash gap:platform="ios" src="img/ios/Default_at_2x.png" width="640" height="960" />
+            <gap:splash gap:platform="ios" height="1024" src="img/ios/screen-ipad-portrait.png" width="768" />
+            <gap:splash gap:platform="ios" src="img/ios/Default_iphone5.png" width="640" height="1136" />
+            <gap:splash gap:platform="ios" src="img/ios/Default-ipad_portrait_x2.png" width="1536" height="2008" />
+            <!-- Android -->
+            <gap:splash gap:density="ldpi" gap:platform="android" src="img/android/attrition-android-small-426x320px.png" />
+            <gap:splash gap:density="mdpi" gap:platform="android" src="img/android/attrition-android-medium-470x320px.png" />
+            <gap:splash gap:density="hdpi" gap:platform="android" src="img/android/attrition-android-large-640x480.png" />
+            <gap:splash gap:density="xhdpi" gap:platform="android" src="img/android/attrition-android-xlarge-960x720px.png" />
 
     <!-- Define app icon for each platform. -->
     <icon src="img/icon57.png" gap:platform="ios" width="57" height="57" />
