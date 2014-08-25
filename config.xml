@@ -4,7 +4,7 @@
     id="com.squaretab.tools.attritioncalculator"
     version     = "0.0.1" >
 
-    <name>Lifetime Value Calculator</name>
+    <name>ttrition Calculator</name>
     <description>
    A SquareTab calculator to identify the attrition of revenue and/or clients. Unfortunately, we all lose revenue & clients. It happens. But how quickly is it happening? Easily calculate it now!
     </description>
