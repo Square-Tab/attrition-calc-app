@@ -6,7 +6,7 @@
 
     <name>Attrition Calculator</name>
     <description>
-   A SquareTab calculator to identify the attrition of revenue and/or clients. Unfortunately, we all lose revenue & clients. It happens. But how quickly is it happening? Easily calculate it now!
+    A SquareTab calculator to identify the attrition of revenue and/or clients. Unfortunately, we all lose revenue & clients. It happens. But how quickly is it happening? Easily calculate it now!
     </description>
     <author email="support@squaretab.com" href="http://squaretab.com">
       SquareTab Developers
@@ -25,10 +25,12 @@
         <gap:splash gap:platform="ios" src="img/ios/Default_iphone5.png" width="640" height="1136" />
         <gap:splash gap:platform="ios" src="img/ios/Default-ipad_portrait_x2.png" width="1536" height="2008" />
         <!-- Android -->
-        <gap:splash gap:density="ldpi" gap:platform="android" src="img/android/attrition-android-small-426x320px.png" />
-        <gap:splash gap:density="mdpi" gap:platform="android" src="img/android/attrition-android-medium-470x320px.png" />
-        <gap:splash gap:density="hdpi" gap:platform="android" src="img/android/attrition-android-large-640x480.png" />
-        <gap:splash gap:density="xhdpi" gap:platform="android" src="img/android/attrition-android-xlarge-960x720px.png" />
+        <gap:splash gap:density="ldpi" gap:platform="android" src="img/android/ltv-android-small-426x320px.png" />
+        <gap:splash gap:density="mdpi" gap:platform="android" src="img/android/ltv-android-medium-470x320px.png" />
+        <gap:splash gap:density="hdpi" gap:platform="android" src="img/android/ltv-android-large-640x480.png" />
+        <gap:splash gap:density="xhdpi" gap:platform="android" src="img/android/ltv-android-xlarge-960x720.png" />
+
+
 
     <!-- Define app icon for each platform. -->
     <icon src="img/icon57.png" gap:platform="ios" width="57" height="57" />
